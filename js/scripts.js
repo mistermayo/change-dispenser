@@ -52,22 +52,27 @@ $(document).ready(function() {
     var quarter = coins[3];
 
     if(quarter > 0) {
-      $("#change-result").append(quarter + " quarters ");
+      $("#change-result").append(quarter + ((quarter == 1) ? " quarter " : " quarters "));
     };
+
     if(dime > 0) {
-      $("#change-result").append(dime + " dimes ");
+      $("#change-result").append(dime + ((dime == 1) ? " dime " : " dimes "));
     };
+
     if(nickel > 0) {
-      $("#change-result").append(nickel + " nickels ");
+      $("#change-result").append(nickel + ((nickel == 1) ? " nickel " : " nickels "));
     };
+
     if(penny > 0) {
-      $("#change-result").append(penny + " pennies ");
+      $("#change-result").append(penny + ((penny == 1) ? " penny" : " pennies"));
     };
+
     if (isNaN(change) || change < 1) {
       $("#error").show();
     } else {
       $("#result").show();
-    }
+    };
+
     event.preventDefault();
 
   });
