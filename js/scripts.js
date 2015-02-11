@@ -30,7 +30,7 @@ var coinCombo = function(coin) {
     }
 
   } while (amount_remaining > 0);
-  
+
     change.push(penny, nickel, dime, quarter);
     return change;
 };
@@ -41,6 +41,8 @@ $(document).ready(function() {
 
   $("form#coin-combo").submit(function(event) {
     $("#change-result").text("");
+    $("#result").hide();
+    $("#error").hide();
 
     var change = parseInt($("input#change").val());
     var coins = coinCombo(change);
@@ -61,8 +63,11 @@ $(document).ready(function() {
     if(penny > 0) {
       $("#change-result").append(penny + " pennies ");
     };
-
-    $("#result").show();
+    if (isNaN(change) || change < 1) {
+      $("#error").show();
+    } else {
+      $("#result").show();
+    }
     event.preventDefault();
 
   });
