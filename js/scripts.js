@@ -51,20 +51,20 @@ $(document).ready(function() {
     var dime = coins[2];
     var quarter = coins[3];
 
-    if(quarter > 0) {
-      $("#change-result").append(quarter + ((quarter == 1) ? " quarter " : " quarters "));
+    if (quarter > 0) {
+      $("#change-result").append(quarter + ((quarter === 1) ? " quarter " : " quarters "));
     };
 
-    if(dime > 0) {
-      $("#change-result").append(dime + ((dime == 1) ? " dime " : " dimes "));
+    if (dime > 0) {
+      $("#change-result").append(dime + ((dime === 1) ? " dime " : " dimes "));
     };
 
-    if(nickel > 0) {
-      $("#change-result").append(nickel + ((nickel == 1) ? " nickel " : " nickels "));
+    if (nickel > 0) {
+      $("#change-result").append(nickel + ((nickel === 1) ? " nickel " : " nickels "));
     };
 
-    if(penny > 0) {
-      $("#change-result").append(penny + ((penny == 1) ? " penny" : " pennies"));
+    if (penny > 0) {
+      $("#change-result").append(penny + ((penny === 1) ? " penny" : " pennies"));
     };
 
     if (isNaN(change) || change < 1) {
